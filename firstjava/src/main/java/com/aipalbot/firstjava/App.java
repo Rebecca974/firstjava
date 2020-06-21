@@ -48,7 +48,7 @@ public class App
     
     
     totalPrice1 = item * price;
-    System.out.println("The totalPrice is:" + totalPrice1);
+    System.out.println("The totalPrice is for my first project:" + totalPrice1);
     
      
     if (totalPrice1> discount) {
