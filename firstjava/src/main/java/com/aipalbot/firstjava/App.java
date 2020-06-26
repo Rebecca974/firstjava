@@ -3,7 +3,7 @@ package com.aipalbot.firstjava;
 import java.util.Scanner;
 
 /**
- * Hello world!
+ * Hello World
  *
  */
 public class App 
@@ -12,48 +12,71 @@ public class App
     { 
     	
     	
+  
+    int studentName =1; 
+    	 	
+   Scanner  scan = new Scanner(System.in);
+  
+   System.out.println("Enter Student" + studentName++ + " ' name :");
+  String  Name = scan.next();
     
-     double totalPrice;
-    double percentage =10;
+ System.out.println("Enter Grade here ");
+  int average = scan.nextInt();
+ 
+ char grade;
     
-   
-    Scanner scanner = new Scanner(System.in);
-    
-   System.out.println("Enter quantity:");
-    int quantity = scanner.nextInt();
-    System.out.println("Enter value for quantity: " + quantity);
-    System.out.println("Enter Price :");
-    int price = scanner.nextInt();
-    System.out.println("Enter value for Price: " + price);
-    
-   totalPrice = quantity* price;
-    System.out.println("The totalPrice is:" + totalPrice);
-     
-    double discount = (percentage/100.00) * totalPrice;
-     
-   System.out.println(" discount is: " + discount);
-    
-   
-   Scanner scanner2 = new Scanner(System.in);
-   
-    System.out.println("Enter your Promocode:");
-  String promoCode = scanner2.nextLine();
-    System.out.println(" your promocode : \n" + promoCode);	
-    	
-    
-    scanner2.close();
-    	scanner.close();
-    	
-    if(totalPrice > 200.00 && promoCode.equals("Summer2020")) {
-    	totalPrice = totalPrice-discount;
+  if(average >= 86 && average <= 100) {
+    	grade = 'A';
     }
+  else if(average >= 70 && average <= 85) {
+  	grade = 'B';
+	
+  }
+  else if(average >= 60 && average <= 69) {
+  	grade = 'C';
+  }
+  else if(average >= 50 && average <= 59) {
+  	grade = 'D';
+	
+  }
+  else if(average >= 40 && average <= 49) {
+  	grade = 'E';
+  	
+  }   
+  else {
+	  grade = 'F';
+	  
+	  }
+  switch(grade) {
+  
+  case 'A':
+ 	System.out.println("Excellent!");
+ 	break;
+  case 'B':
+  	System.out.println("Very Good");
+  	break;
+  case 'C':  	
+	  System.out.println("Good");
+ 	break;  	
+  case 'D':
+  	System.out.println("Pass");
+      break;
+  case 'E':
+	System.out.println("Fair");
+ 	break;  
+	   case 'F':
+  	System.out.println(" Your Grade is Below 25 " + "Better try again");
+     break; 
+     default:
      
-   
-   System.out.println(totalPrice);
-    	
-    }
-    
-   
+ 	System.out.println("Better try again"); 
+	   
 }
+  System.out.println("Your grade is: " + grade);
+  }
+    }
+
+   
+
  
 	
