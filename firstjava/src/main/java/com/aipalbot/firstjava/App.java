@@ -3,7 +3,7 @@ package com.aipalbot.firstjava;
 import java.util.Scanner;
 
 /**
- * Hello World
+ * Hello World!
  *
  */
 public class App 
