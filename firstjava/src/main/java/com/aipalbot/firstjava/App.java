@@ -1,5 +1,6 @@
 package com.aipalbot.firstjava;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 /**
@@ -122,69 +123,136 @@ public class App
     	
     	
   
-    int studentName =1; 
-    	 	
-   Scanner  scan = new Scanner(System.in);
-  
-   System.out.println("Enter Student" + studentName++ + " ' name :");
-  String  Name = scan.next();
+//    int studentName =1; 
+//    	 	
+//   Scanner  scan = new Scanner(System.in);
+//  
+//   System.out.println("Enter Student" + studentName++ + " ' name :");
+//  String  Name = scan.next();
+//    
+// System.out.println("Enter Grade here ");
+//  int average = scan.nextInt();
+// 
+// char grade;
+//    
+//  if(average >= 86 && average <= 100) {
+//    	grade = 'A';
+//    }
+//  else if(average >= 70 && average <= 85) {
+//  	grade = 'B';
+//	
+//  }
+//  else if(average >= 60 && average <= 69) {
+//  	grade = 'C';
+//  }
+//  else if(average >= 50 && average <= 59) {
+//  	grade = 'D';
+//	
+//  }
+//  else if(average >= 40 && average <= 49) {
+//  	grade = 'E';
+//  	
+//  }   
+//  else {
+//	  grade = 'F';
+//	  
+//	  }
+//  switch(grade) {
+//  
+//  case 'A':
+// 	System.out.println("Excellent!");
+// 	break;
+//  case 'B':
+//  	System.out.println("Very Good");
+//  	break;
+//  case 'C':  	
+//	  System.out.println("Good");
+// 	break;  	
+//  case 'D':
+//  	System.out.println("Pass");
+//      break;
+//  case 'E':
+//	System.out.println("Fair");
+// 	break;  
+//	   case 'F':
+//  	System.out.println(" Very very very Poor");
+//     break; 
+//     default:
+//     
+// 	System.out.println("Better try again"); 
+//	   
+//}
+//  System.out.println("Your grade is: " + grade);
+    	
+    	
+    	
+    	//As a user I want to be able to see the total sum of items showing  their sum of 
+    	
+    String[] itemNames = new String[5];
+    int size = itemNames.length;
+    double [] itemPrices = new double[size];
+    int[] itemQuantities = new int[size];
+    double[] totalCostPerItems = new double[size];
     
- System.out.println("Enter Grade here ");
-  int average = scan.nextInt();
- 
- char grade;
+    double totalAmount = 0.0;
     
-  if(average >= 86 && average <= 100) {
-    	grade = 'A';
+   
+    
+    for(int i = 0; i< size; i++) {
+    	int header =i+1;
+    	System.out.println("************************item"+ header +"********************");
+    	 
+    	Scanner input = new Scanner(System.in);
+    	System.out.println("Enter Item Name:");
+    	String itemName = input.nextLine();
+    	itemNames[i]= itemName;
+    	
+    	
+    	System.out.println("Enter Item Quantity:");
+    	int itemQuantity = input.nextInt();
+    	itemQuantities[i]= itemQuantity;
+    	
+    	System.out.println("Enter Item Price:");
+    	double itemPrice = input.nextDouble();
+    	itemPrices[i]= itemPrice;
+    	
+    	double totalCostPerItem = itemQuantity * itemPrice;
+    	totalCostPerItems[i] = totalCostPerItem;
+    	
+   	
+    	totalAmount +=totalCostPerItem;
     }
-  else if(average >= 70 && average <= 85) {
-  	grade = 'B';
-	
-  }
-  else if(average >= 60 && average <= 69) {
-  	grade = 'C';
-  }
-  else if(average >= 50 && average <= 59) {
-  	grade = 'D';
-	
-  }
-  else if(average >= 40 && average <= 49) {
-  	grade = 'E';
-  	
-  }   
-  else {
-	  grade = 'F';
-	  
-	  }
-  switch(grade) {
-  
-  case 'A':
- 	System.out.println("Excellent!");
- 	break;
-  case 'B':
-  	System.out.println("Very Good");
-  	break;
-  case 'C':  	
-	  System.out.println("Good");
- 	break;  	
-  case 'D':
-  	System.out.println("Pass");
-      break;
-  case 'E':
-	System.out.println("Fair");
- 	break;  
-	   case 'F':
-  	System.out.println(" Very very very Poor");
-     break; 
-     default:
-     
- 	System.out.println("Better try again"); 
-	   
-}
-  System.out.println("Your grade is: " + grade);
-  }
+    	
+    	System.out.print("itemName + \t|");
+    	System.out.print("itemPrice +\t|");
+    	System.out.print("itemQuantity +\t|");
+    	System.out.println("totalCostPerItem +\t|");
+    
+    	for(int i = 0; i< size; i++) {
+    		
+    		System.out.print(itemNames[i] +"\t|");
+        	System.out.print(itemPrices[i] +"\t|");
+        	System.out.print(itemQuantities[i] +"\t|");
+        	System.out.println(totalCostPerItems[i] +"\t|");
+        	
+    	}	
+    	
+    	DecimalFormat dFormat = new DecimalFormat("####,###,###.00");
+    	String formatTotalAmount = "$" + dFormat.format(totalAmount);
+    	
+    	System.out.println("Total Amount:" + formatTotalAmount);
+    	
     }
-
+    
+    
+    
+    
+    
+    
+    	
+   
+  }
+    
    
 
  
