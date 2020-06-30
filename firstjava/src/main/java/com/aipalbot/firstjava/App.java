@@ -28,6 +28,8 @@ public class App
 //     System.out.println("Enter value for row" + i+ ", col" + j);
 //     arr[i][j] = input.nextInt();
 //      		}
+    	
+    	
 //     }
 //      	// calculate point * credithour	
 //     for(int i =0; i< row; i++) {
